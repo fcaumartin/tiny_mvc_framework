@@ -22,6 +22,6 @@ class Test extends Controller
             "nom" => "toto",
             "prenom" => "titi"
         ]);
-        redirect(url("crud/index"));
+        $this->redirect(url("crud/index"));
     }
 }

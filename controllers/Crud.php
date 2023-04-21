@@ -17,7 +17,7 @@ class Crud extends controller
         if ($this->is_post()) {
             $this->db->insert("client", $this->post());
             $this->session->message = "ajout effectué";
-            redirect(url("crud/index"));
+            $this->redirect(url("crud/index"));
         } else {
             $this->load("header");
             $this->load("crud/create");
@@ -29,7 +29,7 @@ class Crud extends controller
     {
         if ($this->is_post()) {
             $this->db->update("client", $this->post(), "id", $id);
-            redirect(url("crud/index"));
+            $this->redirect(url("crud/index"));
         } else {
             $data["elt"] = $this->db->row("select * from client where id=?", $id);
             $this->load("header");
@@ -42,7 +42,7 @@ class Crud extends controller
     {
         if ($this->is_post()) {
             $this->db->delete("client", "id", $id);
-            redirect(url("crud/index"));
+            $this->redirect(url("crud/index"));
         } else {
             $data["elt"] = $this->db->row("select * from client where id=?", $id);
             $this->load("header");

@@ -43,11 +43,6 @@ function asset($u)
     return $config["url"] . $u;
 }
 
-function redirect($u)
-{
-    header("Location: " . $u);
-    exit;
-}
 
 /****************************************************
  * Base class Controller
